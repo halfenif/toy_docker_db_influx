@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+
+  toy_docker_db_influx:
+    image: toy_docker_db_influx
+    container_name: toy_docker_db_influx
+    restart: always
+    volumes:
+      - ./data:/var/lib/influxdb2
+      - ./config:/etc/influxdb2
+    ports:
+      - 8086:8086
+    #environment:
+    #  - MYSQL_ROOT_HOST=172.*.*.* 
